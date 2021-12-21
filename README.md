@@ -2,6 +2,28 @@
 
 To use this, you must know how to install and run docker & docker-compose, which is out of the scope of this tool.
 
+# setup VPS
+
+Based on Ubuntu 20.04 VPS
+
+```
+apt update
+apt install docker.io
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+git clone https://github.com/bikerworld/tezos-node.git
+
+cd tezos-node
+
+wget "https://mainnet.xtz-shots.io/tezos-mainnet-1959969.rolling"
+
+mv tezos-mainnet-1959969.rolling snapshot
+
+```
+
 # How to
 
 This document help you to run a lighweight tezos-node (in rolling mode). It will allow you to send transactions to the blockchain, which can help to collect NFTs when public nodes are crawled. It will not help you to become a baker, or query past blockchain data, it's only just a node to send transactions.
